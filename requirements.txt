@@ -1,4 +1,6 @@
 pandas
 numby
 seaborn
+dill
+matplotlib
 -e .
