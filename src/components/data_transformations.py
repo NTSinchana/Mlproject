@@ -1,6 +1,6 @@
 import sys
 from dataclasses import dataclass
-
+sys.path.append("E:/Projects/MLproject")
 import os
 import numpy as np
 import pandas as pd
@@ -96,13 +96,13 @@ class DataTransformation:
             )
 
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocessing_obj.fit_transform(input_feature_test_df)
+            input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
             train_arr = np.c_[
                 input_feature_train_arr,np.array(target_feature_train_df)
     
             ] 
-            test_arr = np.c_[input_feature_test_df,np.array(target_feature_test_df)]
+            test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
             logging.info(f"Saved preprocessing object.")
 
